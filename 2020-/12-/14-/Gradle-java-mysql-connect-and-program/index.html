@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN"">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		
+		<meta charset="UTF-8">
+        		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+				 
+					Gradle+java+mysql connect and program
+				
+		</title>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="bookmark" href="images/favicon.ico" type="image/x-icon">
+
+	</head>
+	<body>
+		<header class="header" id="header">
+	<h1 align="center">Welcome to my blog</h1>
+	<div id="music163player">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=756162&auto=0&height=32">
+		</iframe>
+	</div>	
+	<div class="blog-title">
+		<a href="/" class="logo">Hexo-Yinlianlei
+		</a> 
+	</div>
+	<nav class navbar">
+		<u1 class="menu">
+			<li class="menu-item">
+				<a href="/" class="menu-item-link">home</a>
+			</li>
+		</u1>
+	</nav>
+</header>
+
+		<main>
+			<article class="post">
+	<h1>
+		<a class="title" href="/2020-/12-/14-/Gradle-java-mysql-connect-and-program/"> 
+		Gradle+java+mysql connect and program 
+		</a>
+	</h1>
+	<div class="meta">
+	<a class="date">
+		<i class="fa fa-calendar" aria-hidden="true"></i>
+		202020-12-14
+	</a>
+	<a class="tag">
+		<i class="fa-snowflake-o" aria-hidden="true"></i>
+	</a>
+</div>
+	<div class="toc">
+	<ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#大体构建思路"><span class="toc-list-text">大体构建思路</span></a></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#构建细节"><span class="toc-list-text">构建细节</span></a></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#结束"><span class="toc-list-text">结束</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#以上"><span class="toc-list-text">以上</span></a></li></ol></li></ol>
+</div>
+	<div class="content">
+		<p>基于mirai的QQbot机器人的编写总结-1</p>
+<h1 id="大体构建思路"><a href="#大体构建思路" class="headerlink" title="大体构建思路"></a>大体构建思路</h1><ul>
+<li>基于mirai-console的插件构造</li>
+<li>用mirai-console-loader进行Bot构造</li>
+<li>基于kotlin/java+mysql的后台数据处理 <a id="more"></a><h1 id="构建细节"><a href="#构建细节" class="headerlink" title="构建细节"></a>构建细节</h1></li>
+<li>插件构造<br>mirai-console的插件由gradle对文件进行打包做成<br>其中的重要文件包括build.gradle.kt, 构建文件, 用于处理那该死的类依赖问题<br>(若和我一样不喜欢下载/安装IDE而使用轻量级编译环境的话可以考虑将所需要的包文件全部仍在编辑文件的resources文件夹内, 这样编译的话可以省去部分依赖问题)<br><del>(且其文件可以在<a href="https://bintray.com/him188moe/mirai/mirai-core/下载所需依赖" target="_blank" rel="noopener">https://bintray.com/him188moe/mirai/mirai-core/下载所需依赖</a>, 之后通过压缩包软件打开后将其中类全部抽出即可)</del></li>
+<li>mirai-api语法<br>mirai-plugin由于是使用其<a href="https://github.com/project-mirai/mirai-console-plugin-template" target="_blank" rel="noopener">模板</a>进行开发<br>其中的API在官方mirai-core-api中的源代码的注释中有相关说明<br>且需要注意onEnable/onLoad两个函数，其在插件运行时由重要作用</li>
+<li>mirai-console-loader的使用<br>其为官方的一键启动器，十分好用，但是目前有一个问题，就是mirai-http-api由于更新问题，暂时只能支持1.0-M4版本的文件<br>所以大部分基于mirai-http-api的其他SDK成品项目暂时陷入了无法使用新功能的情况\</li>
+<li>mysql数据库的连接<br>由于mysql官方开发的mysql-connector-java是jar文件形式，所以传统情况下必须通过插件进行加载。<br>但是由于我这边的插件环境其实并不是IDE所以出现了无法编译的情况<br>其解决办法是将mysql-connector-java.jar解压在resources文件夹中，然后进行编译，边课将其全部打包进jar文件中，达到调用效果<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1>目前来看成果尚好，可以考虑在寒假开启一个bot进行文字游戏，数据库和本地文件还需要考虑其可行性，但可见还是比较有意思的一个项目<br>但是由于课程和考试的缘故，目前不得已得准备考试了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├── java</span><br><span class="line">│   └── kotlin</span><br><span class="line">│       └── com</span><br><span class="line">│           └── Yinlianlei</span><br><span class="line">│               └── test</span><br><span class="line">│                   ├── App.class</span><br><span class="line">│                   └── App.java</span><br><span class="line">├── META-INF</span><br><span class="line">│   └── MAINFEST.MF</span><br><span class="line">└── resources</span><br><span class="line">    └── com</span><br><span class="line">        └── mysql</span><br><span class="line">            ├── cj...</span><br><span class="line">            └──jdbc...</span><br></pre></td></tr></table></figure>
+
+<p>附上java-mysql连接的文件结构图</p>
+<h2 id="以上"><a href="#以上" class="headerlink" title="以上"></a>以上</h2>
+	</div>
+</article>
+		</main>
+		<footer class="footer">
+	<div class="footer-copyright">
+	<a>Thank you for reading.</a>
+	</div>
+</footer>
+
+	</body>
+</html>

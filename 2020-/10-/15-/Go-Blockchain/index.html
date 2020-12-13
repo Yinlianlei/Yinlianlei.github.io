@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN"">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		
+		<meta charset="UTF-8">
+        		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+				 
+					Go-Blockchain
+				
+		</title>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="bookmark" href="images/favicon.ico" type="image/x-icon">
+
+	</head>
+	<body>
+		<header class="header" id="header">
+	<h1 align="center">Welcome to my blog</h1>
+	<div id="music163player">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=756162&auto=0&height=32">
+		</iframe>
+	</div>	
+	<div class="blog-title">
+		<a href="/" class="logo">Hexo-Yinlianlei
+		</a> 
+	</div>
+	<nav class navbar">
+		<u1 class="menu">
+			<li class="menu-item">
+				<a href="/" class="menu-item-link">home</a>
+			</li>
+		</u1>
+	</nav>
+</header>
+
+		<main>
+			<article class="post">
+	<h1>
+		<a class="title" href="/2020-/10-/15-/Go-Blockchain/"> 
+		Go-Blockchain 
+		</a>
+	</h1>
+	<div class="meta">
+	<a class="date">
+		<i class="fa fa-calendar" aria-hidden="true"></i>
+		202020-10-15
+	</a>
+	<a class="tag">
+		<i class="fa-snowflake-o" aria-hidden="true"></i>
+	</a>
+</div>
+	<div class="toc">
+	<ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#今日在搞区块链和数据库的时候遇到的问题："><span class="toc-list-text">今日在搞区块链和数据库的时候遇到的问题：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#mysql最开始的时候出现了ERROR-2800-的问题："><span class="toc-list-text">mysql最开始的时候出现了ERROR(2800)的问题：</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#然后就是一个很该死的还原问题了，Go环境变量修改"><span class="toc-list-text">然后就是一个很该死的还原问题了，Go环境变量修改</span></a></li></ol></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#重启后即可完成"><span class="toc-list-text">重启后即可完成</span></a></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#好吧区块链的服务块目前出现问题到此，还有微信小程序和机械学习要搞，感觉要累到猝死。"><span class="toc-list-text">好吧区块链的服务块目前出现问题到此，还有微信小程序和机械学习要搞，感觉要累到猝死。</span></a></li></ol>
+</div>
+	<div class="content">
+		<h1 id="今日在搞区块链和数据库的时候遇到的问题："><a href="#今日在搞区块链和数据库的时候遇到的问题：" class="headerlink" title="今日在搞区块链和数据库的时候遇到的问题："></a>今日在搞区块链和数据库的时候遇到的问题：</h1><h2 id="mysql最开始的时候出现了ERROR-2800-的问题："><a href="#mysql最开始的时候出现了ERROR-2800-的问题：" class="headerlink" title="mysql最开始的时候出现了ERROR(2800)的问题："></a>mysql最开始的时候出现了ERROR(2800)的问题：</h2><p>解决办法:\</p>
+<a id="more"></a>
+<ul>
+<li><p>在my.cnf中设置skip-grant-tables，之后再关闭mysql服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service mysql stop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后进入root权限对root密码进行修改。由于kali linux自带的mysql使无密码进入，可以再root权限内直接进入修改权限</p>
+</li>
+<li><p>疑似是kali linux自带mysql可由root权限直接进入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mysql -u root</span><br><span class="line">EnterPassword: //回车键</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后更改密码和添加用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;toor&apos;;</span><br><span class="line">create user &apos;Yinlianlei&apos;@&apos;localhost&apos; identified by &apos;Password&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后重新更改用户再登陆即可</p>
+</li>
+</ul>
+<hr>
+<h2 id="然后就是一个很该死的还原问题了，Go环境变量修改"><a href="#然后就是一个很该死的还原问题了，Go环境变量修改" class="headerlink" title="然后就是一个很该死的还原问题了，Go环境变量修改"></a>然后就是一个很该死的还原问题了，Go环境变量修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/profile</span><br><span class="line"></span><br><span class="line">//末尾加上</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:/usr/local/go/bin</span><br><span class="line"></span><br><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+
+<h1 id="重启后即可完成"><a href="#重启后即可完成" class="headerlink" title="重启后即可完成"></a>重启后即可完成</h1><h1 id="好吧区块链的服务块目前出现问题到此，还有微信小程序和机械学习要搞，感觉要累到猝死。"><a href="#好吧区块链的服务块目前出现问题到此，还有微信小程序和机械学习要搞，感觉要累到猝死。" class="headerlink" title="好吧区块链的服务块目前出现问题到此，还有微信小程序和机械学习要搞，感觉要累到猝死。"></a>好吧区块链的服务块目前出现问题到此，还有微信小程序和机械学习要搞，感觉要累到猝死。</h1><p>以上</p>
+
+	</div>
+</article>
+		</main>
+		<footer class="footer">
+	<div class="footer-copyright">
+	<a>Thank you for reading.</a>
+	</div>
+</footer>
+
+	</body>
+</html>
