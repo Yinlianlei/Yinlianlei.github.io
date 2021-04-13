@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN"">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		
+		<meta charset="UTF-8">
+        		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+				 
+					Mysql-Update&amp;ConnectionERROR
+				
+		</title>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="bookmark" href="images/favicon.ico" type="image/x-icon">
+
+	</head>
+	<body>
+		<header class="header" id="header">
+	<h1 align="center">Welcome to my blog</h1>
+	<div id="music163player">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=756162&auto=0&height=32">
+		</iframe>
+	</div>	
+	<div class="blog-title">
+		<a href="/" class="logo">Hexo-Yinlianlei
+		</a> 
+	</div>
+	<nav class navbar">
+		<u1 class="menu">
+			<li class="menu-item">
+				<a href="/" class="menu-item-link">home</a>
+			</li>
+		</u1>
+	</nav>
+</header>
+
+		<main>
+			<article class="post">
+	<h1>
+		<a class="title" href="/2021-/04-/13-/Mysql-Update-ConnectionERROR/"> 
+		Mysql-Update&amp;ConnectionERROR 
+		</a>
+	</h1>
+	<div class="meta">
+	<a class="date">
+		<i class="fa fa-calendar" aria-hidden="true"></i>
+		212021-04-13
+	</a>
+	<a class="tag">
+		<i class="fa-snowflake-o" aria-hidden="true"></i>
+	</a>
+</div>
+	<div class="toc">
+	<ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#mysql驱动升级"><span class="toc-list-text">mysql驱动升级</span></a></li><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#mysql远处访问设置"><span class="toc-list-text">mysql远处访问设置</span></a></li></ol>
+</div>
+	<div class="content">
+		<h1 id="mysql驱动升级"><a href="#mysql驱动升级" class="headerlink" title="mysql驱动升级"></a>mysql驱动升级</h1><h1 id="mysql远处访问设置"><a href="#mysql远处访问设置" class="headerlink" title="mysql远处访问设置"></a>mysql远处访问设置</h1><p>mysql 版本升级(wget的版本或许会不同)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.1-1_all.deb</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.1-1_all.deb</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>最后在更新mysql驱动的时候选择版本即可<br>5.7以上才有JSON格式的支持\</p>
+<p>对于外部IP地址访问的设置<br>在/etc/mysql/mysql.conf.d/mysqld.cnf内进行设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind-address = IP1 IP2</span><br></pre></td></tr></table></figure>
+
+<p>或是直接全部注释掉<br>即可通过远程访问数据库<br>以上</p>
+
+	</div>
+</article>
+		</main>
+		<footer class="footer">
+	<div class="footer-copyright">
+	<a>Thank you for reading.</a>
+	</div>
+</footer>
+
+	</body>
+</html>
