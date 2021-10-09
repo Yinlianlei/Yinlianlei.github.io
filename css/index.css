@@ -1,0 +1,21 @@
+@font-face {
+    font-family: UnifrakturMaguntia;
+    src: url(../font/UnifrakturMaguntia.ttf);
+}
+
+#continue{
+    color: black;
+    text-decoration:none;
+}
+
+.post{
+    text-align: center;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.title,.title:visited,.tag-a,.tag-a:visited {
+    color: black;
+    text-decoration:none;
+}

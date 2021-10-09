@@ -1,0 +1,101 @@
+@font-face {
+    font-family: UnifrakturMaguntia;
+    src: url(../font/UnifrakturMaguntia.ttf);
+}
+
+main{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-copyright{
+    font-family: UnifrakturMaguntia;
+    font-size: larger;
+    background-color: black;
+    opacity: 0.8;
+    height: 50px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+footer{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+header{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1.title {
+    font-family: UnifrakturMaguntia;
+    font-size:100px;
+    text-shadow: 3px 3px 5px black;
+    color: white;
+}
+
+div.menu {
+    width: auto;
+    height: auto;
+    min-width: 600px;
+    min-height: 50px;
+    font-size: 28px;
+    border-radius: 5px;
+    text-shadow: 3px 3px 5px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    opacity: 0.8;
+
+    border-top-style: double;
+    border-top-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: whitesmoke;
+    /*opacity:0.5;/* 背景透明度 */
+}
+
+ul.menu-bar {
+    margin: 30px auto;
+    width: 600px;
+    /*list-style-type: none;*/
+    padding: 0;
+    border: solid 1px #eee;
+    border-width: 1px 0;
+    flex-direction: row;
+}
+
+li.menu-item {
+    list-style-type: none;
+    float: left;
+    background-color: rgb(41, 41, 41);
+    border-radius:5px; /* 圆角 */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+li a.ul-item {
+    font-family: UnifrakturMaguntia;
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+}
+ 
+/* 鼠标移动到选项上修改背景颜色 */
+li a.ul-item:hover {
+    font-family: UnifrakturMaguntia;
+    background-color: rgb(133, 128, 128);
+    color: rgb(0, 0, 0);
+    border-radius:5px
+}

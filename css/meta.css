@@ -1,0 +1,19 @@
+@font-face {
+    font-family: UnifrakturMaguntia;
+    src: url(../font/UnifrakturMaguntia.ttf);
+}
+
+.tag-a {
+    align-items: center;
+    text-align: center;
+    font-size: larger;
+    font-family: UnifrakturMaguntia;
+}
+
+.date {
+    align-items: center;
+    text-align: center;
+    font-size: larger;
+    font-family: UnifrakturMaguntia;
+}
+
