@@ -3,6 +3,10 @@
     src: url(../font/UnifrakturMaguntia.ttf);
 }
 
+@media screen and (max-width: 800px){
+    
+}
+
 main{
     padding-left: 10%;
     padding-right: 10%;
@@ -44,15 +48,12 @@ h1.title {
 }
 
 div.menu {
-    width: auto;
-    height: auto;
-    min-width: 600px;
-    min-height: 50px;
+    width: 600px auto;
+    height: 50px auto;
     font-size: 28px;
     border-radius: 5px;
     text-shadow: 3px 3px 5px black;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     background-color: black;
     opacity: 0.8;
@@ -98,4 +99,20 @@ li a.ul-item:hover {
     background-color: rgb(133, 128, 128);
     color: rgb(0, 0, 0);
     border-radius:5px
+}
+
+@media screen and (orientation : portrait) {
+    h1.title {
+        font-size:50px;
+    }
+
+    div.menu{
+        width: auto;
+        height: auto;
+    }
+
+    li.menu-item {
+        width: auto;
+        font-size: large;
+    }
 }

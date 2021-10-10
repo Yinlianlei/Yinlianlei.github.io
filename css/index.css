@@ -19,3 +19,36 @@
     color: black;
     text-decoration:none;
 }
+
+#post-buttom{
+    display: flex;
+    justify-content: space-between;
+}
+
+#last_post,#last_post:visited{
+    color: black;
+    padding-left: 20%;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+#next_post,#next_post:visited{
+    color: black;
+    padding-right: 20%;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+#angle,#angle:visited,.page-number,.page-number:visited {
+    color: black;
+    list-style-type: none;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.paginator-arrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

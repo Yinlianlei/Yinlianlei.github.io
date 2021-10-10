@@ -1,0 +1,34 @@
+.tag-div{
+    min-height: 300px;
+    height: auto;
+    width: auto;
+}
+
+.post-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.post-tags-li{
+    list-style-type: none;
+    text-decoration: none;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.post-tags-a,.post-tags-a:visited{
+    padding-right: 5px;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    padding-left: 3px;
+    border-left: solid;
+    border-left-width: 5px;
+    border-left-color:whitesmoke;
+}
+
+.post-tags-count{
+    color: white;
+    background-color: rgb(37, 34, 34);
+}
