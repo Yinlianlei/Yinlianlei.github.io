@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 300px;
 }
 
 .year{
@@ -18,6 +19,10 @@
 li.post-item{
     list-style-type: none;
     text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content:space-between;
 }
 
 span.date{
@@ -25,8 +30,12 @@ span.date{
 }
 
 #achive-title{
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
     float: right;
-    padding-right: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
     font-size: 25px;
 }
 
